@@ -1,0 +1,104 @@
+
+body {
+    background-color: rebeccapurple;
+}
+
+#header-sect {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#board button {
+    width: 70px;
+    height: 70px;
+    margin: 1px;
+    border-radius: 50%;
+    border: solid black 1px;
+    border-color: rgb(128, 128, 128);
+    background-color: rgb(235, 235, 235);
+}
+
+#board button:focus {
+    outline:0;
+}
+
+#turn {
+    margin-top: 50%;
+    margin-bottom: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+    font-size: 1.1em;
+    font-style: italic;
+
+    border-radius: 4px;
+    border: dotted 1px rgb(128, 128, 128);
+
+    -webkit-user-select: none;     
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;    
+}
+
+#winner {
+    margin-top: 30px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 1.2em;
+    text-align: center;
+    font-style: italic;
+
+    border-radius: 4px;
+    border: dotted 1px rgb(128, 128, 128);
+
+    -webkit-user-select: none;     
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+
+#restart-btn {
+    margin-top: 2px;
+    width: 300px;
+    height: 50px;
+    font-size: 1.2em;
+}
+
+#new-game-btn {
+    margin-top: 7px;
+    width: 300px;
+    height: 40px;
+    font-size: 1em;
+}
+
+#blue {
+    color: rgb(14, 14, 248);
+}
+
+#red {
+    color: rgb(231, 52, 52);
+}
+
+#game-sect {
+    display: none;
+}
+
+#startup-form label {
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+#startup-form button {
+    height: 45px;
+    margin-top: 20px;
+}
+
+#score-table {
+    border-radius: 50px;
+}
+
+.footer {
+  width: 70%;
+  color: white;
+  text-align: center;
+}

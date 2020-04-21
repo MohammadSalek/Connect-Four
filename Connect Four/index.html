@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="assets/js/jquery-3.5.0.min.js"></script>
+    <link rel="stylesheet" href="assets/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <script src="assets/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron" id="header-sect">
+            <h2>Connect Four Game</h2>
+            <hr class="my-4">
+            <p style="text-align: left;">
+                <strong>Connect Four</strong> is a two-player connection board game in which the players take turns dropping one colored disc from the top into a seven-column, six-row vertically suspended grid. The pieces fall straight down, occupying the lowest available space within the column. The objective of the game is to be the first to form a horizontal, vertical, or diagonal line of four of one's own discs.
+                <br>
+                <a class="text-danger" href="https://en.wikipedia.org/wiki/Connect_Four">Wikipedia Connect Four</a>
+            </p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="jumbotron">            
+            <div class="container col-md-5 col-md-offset-5">
+                <div id="startup-form">
+                    <div class="row">
+                        <div class="col-8">
+                            <label for="player1">Player One:</label>
+                            <input type="text" class="form-control" placeholder="Player One" value="Player One" id="player1" maxlength='32' required>                    
+                        </div>
+                        <div class="col-4">
+                            <label class="mr-sm-2" for="color-selector1">Color:</label>
+                            <select class="custom-select mr-sm-2" id="color-selector1" disabled>
+                                <option value="1" selected>blue</option>
+                                <option value="2">red</option>
+                                <option value="3">green</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <label for="player2">Player Two:</label>
+                            <input type="text" class="form-control" placeholder="Player Two" value="Player Two" id="player2" maxlength='32' required>
+                        </div>
+                        <div class="col-4">
+                            <label class="mr-sm-2" for="color-selector2">Color:</label>
+                            <select class="custom-select mr-sm-2" id="color-selector2" disabled>
+                                <option value="1">blue</option>
+                                <option value="2" selected>red</option>
+                                <option value="3">green</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button type="button" class="btn btn-block btn-warning btn-success" id="start-btn">Play Game!</button>
+                    </div>
+                </div>
+            </div>
+            <div id="game-sect">
+                <div class="grid d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col-3"  >                            
+                            <div id="turn">
+                                <div>
+                                    Turn:
+                                    <span id="turn-player-name">Player One</span>
+                                </div>
+                            </div> 
+                            <div class="row" >
+                                <button type="button" id="restart-btn" class="btn btn-warning btn-success">
+                                    <svg class="bi bi-arrow-clockwise" width="1.2em" height="1.2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M3.17 6.706a5 5 0 017.103-3.16.5.5 0 10.454-.892A6 6 0 1013.455 5.5a.5.5 0 00-.91.417 5 5 0 11-9.375.789z" clip-rule="evenodd"/>
+                                        <path fill-rule="evenodd" d="M8.147.146a.5.5 0 01.707 0l2.5 2.5a.5.5 0 010 .708l-2.5 2.5a.5.5 0 11-.707-.708L10.293 3 8.147.854a.5.5 0 010-.708z" clip-rule="evenodd"/>
+                                    </svg>
+                                    Restart Match
+                                </button>
+                            </div>
+                            <div class="row" >
+                                <button type="button" id="new-game-btn" class="btn  btn-warning btn-success">New Game</button>
+                            </div>
+                            <div id="winner">
+                                <span id="winner-name">Player One</span>
+                                Won!
+                            </div>
+                        </div>     
+                        <div class="col-9" id="board">
+                            <table align="center" id="board-table">
+                                <tr>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                    <td><button type="button"></button></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container footer">
+        <div>
+            <p>
+                A non-responsive(!) project to improve my front end skills while <a class="text-warning" href="https://en.wikipedia.org/wiki/Coronavirus_disease_2019">Coronavirus</a> is killing people out there!
+                <br>
+                Developed by:
+                <span class="text-warning">Mohammad Salek</span>
+                <a href="https://t.me/nano_byte"><img src="data:image/png;base64,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"/></a>
+                <a href="https://github.com/MohammadSalek/"><img src="data:image/png;base64,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"/></a>
+            </p>
+        </div>
+    </div> 
+    <div style="display: none;">
+        <!-- They said put the link in your page to use icons freely, but they didn't say not to disable it! -->
+        <a href="https://icons8.com">icons by icons8</a>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
